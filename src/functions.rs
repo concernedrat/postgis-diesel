@@ -93,6 +93,11 @@ sql_function! {
     #[sql_name="ST_Within"]
     fn st_within(left: Geometry, right: Geometry) -> Bool;
 }
+sql_function! {
+    // Returns the mimimum spherical distance between two points and/or multipoints on a sphere, in meters
+    #[sql_name="ST_Distance_Sphere"]
+    fn st_distance_sphere(left: Geometry, right: Geometry) -> Integer;
+}
 
 pub type St3DIntersects<GeomA, GeomB> = st_3d_intersects::HelperType<GeomA, GeomB>;
 pub type StContains<GeomA, GeomB> = st_contains::HelperType<GeomA, GeomB>;
@@ -113,3 +118,5 @@ pub type StRelateBnr<GeomA, GeomB, BNRule> = st_relate_bnr::HelperType<GeomA, Ge
 pub type StRelateMatch<GeomA, GeomB> = st_relate_match::HelperType<GeomA, GeomB>;
 pub type StTouches<GeomA, GeomB> = st_touches::HelperType<GeomA, GeomB>;
 pub type StWithin<GeomA, GeomB> = st_within::HelperType<GeomA, GeomB>;
+pub type StDistanceSphere<GeomA, GeomB> =
+    st_distance_sphere::HelperType<GeomA, GeomB>;
