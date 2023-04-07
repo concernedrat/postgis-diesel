@@ -96,7 +96,7 @@ sql_function! {
 sql_function! {
     // Returns the mimimum spherical distance between two points and/or multipoints on a sphere, in meters
     #[sql_name="ST_Distance_Sphere"]
-    fn st_distance_sphere(left: Geometry, right: Geometry) -> Integer;
+    fn st_distance_sphere(left: Geometry, right: Geometry) -> Float;
 }
 
 pub type St3DIntersects<GeomA, GeomB> = st_3d_intersects::HelperType<GeomA, GeomB>;
