@@ -95,7 +95,7 @@ sql_function! {
 }
 sql_function! {
     // Returns the mimimum spherical distance between two points and/or multipoints on a sphere, in meters
-    #[sql_name="ST_Distance_Sphere"]
+    #[sql_name="ST_DistanceSphere"]
     fn st_distance_sphere(left: Geometry, right: Geometry) -> Float;
 }
 
